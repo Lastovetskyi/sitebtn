@@ -1,0 +1,191 @@
+/* BTN — базові стилі
+   Палітра: льодовиковий тил + низьке сонце (бурштин) як акцент даних */
+
+:root{
+  --ground:#F1F3F2;
+  --surface:#FFFFFF;
+  --surface-2:#E6EBEA;
+  --ink:#101619;
+  --ink-2:#37474C;
+  --muted:#65787D;
+  --line:#CFD8D7;
+  --line-2:#E2E8E7;
+  --ice:#175C6B;
+  --ice-soft:#DEEBED;
+  --sun:#B4651C;
+  --sun-soft:#F6EADD;
+  --shadow:0 1px 2px rgba(16,22,25,.05),0 10px 30px -20px rgba(16,22,25,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0A1114;
+    --surface:#111A1E;
+    --surface-2:#18242A;
+    --ink:#E3EAEA;
+    --ink-2:#BAC8CA;
+    --muted:#8397 9C;
+    --muted:#83979C;
+    --line:#25353B;
+    --line-2:#1D2B31;
+    --ice:#6FB8C6;
+    --ice-soft:#122C33;
+    --sun:#DDA05A;
+    --sun-soft:#2A2015;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0A1114;
+  --surface:#111A1E;
+  --surface-2:#18242A;
+  --ink:#E3EAEA;
+  --ink-2:#BAC8CA;
+  --muted:#83979C;
+  --line:#25353B;
+  --line-2:#1D2B31;
+  --ice:#6FB8C6;
+  --ice-soft:#122C33;
+  --sun:#DDA05A;
+  --sun-soft:#2A2015;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 12px 32px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Literata",Georgia,"Times New Roman",serif;
+  font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+.narrow{max-width:70ch}
+
+/* --- шапка --- */
+.topbar{border-bottom:1px solid var(--line);background:var(--surface);
+  position:sticky;top:0;z-index:20}
+.topbar .wrap{display:flex;align-items:center;gap:26px;
+  min-height:58px;flex-wrap:wrap}
+.brand{font-family:"Unbounded",system-ui,sans-serif;font-weight:600;
+  font-size:16px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;
+  display:flex;align-items:center;gap:9px;white-space:nowrap}
+.brand .dot{width:9px;height:9px;border-radius:50%;
+  background:var(--sun);box-shadow:0 0 0 3px var(--sun-soft);flex:none}
+.nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav a{font-family:"Manrope",system-ui,sans-serif;font-size:14.5px;
+  color:var(--ink-2);text-decoration:none;padding:3px 0;
+  border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current]{color:var(--ice);border-bottom-color:var(--ice)}
+
+/* --- хлібні крихти --- */
+.crumbs{font-family:"Manrope",sans-serif;font-size:13px;color:var(--muted);
+  padding:18px 0 0}
+.crumbs a{color:var(--muted)}
+.crumbs span{margin:0 7px;opacity:.5}
+
+/* --- типографіка --- */
+h1{font-family:"Unbounded",system-ui,sans-serif;font-weight:600;
+  font-size:clamp(27px,4.4vw,42px);line-height:1.14;letter-spacing:-.025em;
+  margin:18px 0 16px;text-wrap:balance;max-width:22ch}
+h2{font-family:"Manrope",system-ui,sans-serif;font-weight:700;
+  font-size:clamp(20px,2.7vw,25px);line-height:1.26;letter-spacing:-.015em;
+  margin:46px 0 14px;text-wrap:balance;max-width:34ch;
+  padding-top:14px;border-top:1px solid var(--line-2)}
+h3{font-family:"Manrope",sans-serif;font-weight:700;font-size:17.5px;
+  margin:30px 0 10px}
+p{margin:0 0 16px;max-width:70ch}
+ul,ol{margin:0 0 16px;padding-left:23px;max-width:70ch}
+li{margin:0 0 8px}
+a{color:var(--ice);text-underline-offset:2px}
+strong{font-weight:600}
+.lead{font-size:19px;color:var(--ink-2);max-width:66ch}
+.label{font-family:"Manrope",sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.byline{font-family:"Manrope",sans-serif;font-size:13.5px;color:var(--muted);
+  display:flex;gap:16px;flex-wrap:wrap;padding:0 0 20px;
+  border-bottom:1px solid var(--line);margin-bottom:26px}
+
+/* --- блок відповіді --- */
+.answer{background:var(--surface);border:1px solid var(--line);
+  border-left:4px solid var(--sun);border-radius:3px;
+  padding:20px 24px;margin:0 0 30px;box-shadow:var(--shadow)}
+.answer .label{display:block;margin-bottom:9px}
+.answer p{font-size:18px;margin:0 0 11px;max-width:64ch}
+.answer p:last-child{margin-bottom:0}
+.answer b{color:var(--ink);font-weight:600}
+
+/* --- таблиці --- */
+.tw{overflow-x:auto;margin:0 0 22px;border:1px solid var(--line);
+  border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;
+  font-family:"Manrope",sans-serif;font-size:14.5px}
+caption{text-align:left;font-family:"Manrope",sans-serif;font-size:13px;
+  color:var(--muted);padding:11px 14px 0;caption-side:bottom}
+th{text-align:left;font-weight:700;font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);padding:11px 14px;
+  border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+
+/* --- врізки --- */
+.box{border-left:3px solid var(--ice);background:var(--ice-soft);
+  padding:15px 19px;margin:0 0 22px;border-radius:0 3px 3px 0}
+.box .label{color:var(--ice);display:block;margin-bottom:7px}
+.box p{margin:0 0 8px;font-size:16px}
+.box p:last-child{margin-bottom:0}
+
+/* --- картки розділів --- */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  margin:0 0 30px;padding:0;list-style:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:20px 22px;box-shadow:var(--shadow);margin:0;display:flex;
+  flex-direction:column;gap:8px}
+.card h3{margin:0;font-size:17px;line-height:1.32}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover{color:var(--ice)}
+.card p{margin:0;font-size:15px;color:var(--ink-2)}
+.card .stat{font-family:"Manrope",sans-serif;font-weight:700;
+  font-size:26px;color:var(--sun);font-variant-numeric:tabular-nums;
+  line-height:1.1;margin-top:4px}
+.card .stat small{display:block;font-size:12.5px;font-weight:500;
+  color:var(--muted);letter-spacing:.02em;margin-top:3px}
+
+/* --- FAQ --- */
+.faq{margin:0 0 24px}
+.faq h3{font-size:16.5px;margin:22px 0 7px;color:var(--ink)}
+.faq p{font-size:16px}
+
+/* --- джерела --- */
+.sources{font-family:"Manrope",sans-serif;font-size:14px;
+  padding-left:22px;max-width:74ch}
+.sources li{margin:0 0 10px;color:var(--ink-2)}
+.sources .type{color:var(--muted);font-size:12.5px}
+
+/* --- суміжне --- */
+.related{list-style:none;padding:0;margin:0 0 20px;
+  display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.related li{margin:0}
+.related a{display:block;padding:13px 16px;background:var(--surface);
+  border:1px solid var(--line);border-radius:3px;text-decoration:none;
+  color:var(--ink);font-family:"Manrope",sans-serif;font-size:14.5px;
+  line-height:1.4}
+.related a:hover{border-color:var(--ice);color:var(--ice)}
+
+footer{border-top:1px solid var(--line);margin-top:64px;padding:26px 0 60px;
+  font-family:"Manrope",sans-serif;font-size:13.5px;color:var(--muted)}
+footer p{max-width:74ch;margin:0 0 10px}
+footer a{color:var(--muted)}
+
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Приклади забороненої лексики в методології: згадка, а не вжиток.
+   Клас читає перевірочний скрипт llmaudit.py (вимога ВТ-02). */
+.lex{font-style:italic;color:var(--muted);white-space:nowrap}
+.fine{font-family:"Manrope",sans-serif;font-size:14px;color:var(--muted);max-width:70ch}
+
+/* --- жанровий підпис поруч із логотипом --- */
+.brand .tag{font-family:"Manrope",system-ui,sans-serif;font-weight:500;
+  font-size:12.5px;letter-spacing:0;color:var(--muted);
+  border-left:1px solid var(--line);padding-left:9px}
+@media(max-width:680px){.brand .tag{display:none}}

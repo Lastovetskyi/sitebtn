@@ -1,0 +1,133 @@
+/* BTN — стилі головної сторінки: герой, карта, графіки */
+
+/* ---------- ГЕРОЙ ---------- */
+.hero{
+  background:#0A1417;
+  color:#DCE6E8;
+  margin:0 0 46px;
+  border-bottom:1px solid #1B2A2F;
+  overflow:hidden;
+  position:relative;
+}
+.hero-in{
+  max-width:1060px;margin:0 auto;padding:44px 22px 34px;
+  display:grid;gap:34px;align-items:center;
+  grid-template-columns:1fr;
+}
+@media(min-width:900px){
+  .hero-in{grid-template-columns:minmax(0,1fr) minmax(0,470px);padding:56px 22px 46px}
+}
+.hero h1{
+  color:#F2F7F8;margin:0 0 18px;max-width:16ch;
+  font-size:clamp(30px,5vw,50px);
+}
+.hero .lead{color:#A9BEC2;font-size:18px;max-width:52ch;margin:0 0 24px}
+.hero .kicker{
+  font-family:"Manrope",sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:#D08A3C;margin:0 0 16px;
+}
+.hero-figures{
+  display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));
+  border-top:1px solid #1F3036;padding-top:20px;margin-top:4px;
+}
+.hero-figures div{padding-right:14px}
+.hero-figures b{
+  display:block;font-family:"Manrope",sans-serif;font-weight:700;
+  font-size:clamp(19px,2.4vw,25px);color:#E8B172;font-variant-numeric:tabular-nums;
+  line-height:1.15;
+}
+.hero-figures span{
+  display:block;font-family:"Manrope",sans-serif;font-size:12px;
+  color:#8AA0A5;margin-top:5px;line-height:1.35;
+}
+
+/* ---------- КАРТА ---------- */
+.map-wrap{position:relative}
+.map{width:100%;height:auto;display:block}
+.map .ocean{fill:#08171D}
+.map .land{fill:#33545D;stroke:#5B858F;stroke-width:1.2}
+.map .grat{stroke:#1C333B;stroke-width:.9;fill:none}
+.map .arctic-circle{stroke:#5E97A4;stroke-width:1.4;fill:none;stroke-dasharray:6 5;opacity:.75}
+.map .ridge{stroke:#D9903F;stroke-width:3;fill:none;stroke-linecap:round;
+  stroke-linejoin:round;opacity:.95}
+.map .route{stroke:#63A7B6;stroke-width:2.2;fill:none;stroke-dasharray:7 6;
+  stroke-linecap:round}
+.map .pole{fill:#F0F5F6;stroke:#0A1417;stroke-width:1.5}
+.map .geo{font-family:"Manrope",sans-serif;font-size:13.5px;font-weight:700;
+  fill:#C3D6DA;letter-spacing:.12em}
+.map .pole-lb{font-family:"Manrope",sans-serif;font-size:12.5px;fill:#C6D6D9}
+.map-legend{
+  display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;
+  font-family:"Manrope",sans-serif;font-size:12.5px;color:#8AA0A5;
+}
+.map-legend i{display:inline-block;width:22px;height:0;vertical-align:middle;
+  margin-right:7px;border-top-width:3px;border-top-style:solid}
+.map-legend .l-ridge i{border-color:#D9903F}
+.map-legend .l-route i{border-color:#63A7B6;border-top-style:dashed}
+.map-legend .l-circle i{border-color:#3C6570;border-top-style:dashed}
+.map-cap{font-family:"Manrope",sans-serif;font-size:12px;color:#6F8B91;
+  margin-top:10px;max-width:60ch;line-height:1.5}
+
+/* ---------- РОЗДІЛ ---------- */
+.chapter{margin:0 0 52px}
+.chapter-head{display:flex;align-items:baseline;gap:14px;
+  border-top:2px solid var(--ink);padding-top:14px;margin-bottom:22px}
+.chapter-head .num{font-family:"Manrope",sans-serif;font-weight:700;font-size:12px;
+  color:var(--sun);letter-spacing:.14em}
+.chapter-head h2{margin:0;border:0;padding:0;font-size:clamp(21px,2.8vw,27px)}
+.chapter-body{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:860px){.chapter-body{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}}
+
+/* ---------- ГРАФІКИ ---------- */
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:3px;
+  padding:20px 22px;box-shadow:var(--shadow)}
+.figure h3{margin:0 0 4px;font-size:15.5px;font-family:"Manrope",sans-serif}
+.figure .sub{font-family:"Manrope",sans-serif;font-size:12.5px;color:var(--muted);
+  margin:0 0 16px}
+.figure figcaption{font-family:"Manrope",sans-serif;font-size:12px;color:var(--muted);
+  margin-top:14px;line-height:1.5}
+
+.stack{height:34px;display:flex;border-radius:2px;overflow:hidden;
+  border:1px solid var(--line)}
+.stack .seg-a{background:var(--ice);flex:0 0 91.4%}
+.stack .seg-b{background:var(--sun);flex:1}
+.stack-key{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;
+  font-family:"Manrope",sans-serif;font-size:13px}
+.stack-key span{display:flex;align-items:center;gap:7px;color:var(--ink-2)}
+.stack-key i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.stack-key .k-a i{background:var(--ice)}
+.stack-key .k-b i{background:var(--sun)}
+.stack-key b{font-variant-numeric:tabular-nums;color:var(--ink)}
+
+.bars{display:grid;gap:11px;margin:0}
+.bar-row{display:grid;grid-template-columns:104px 1fr auto;gap:12px;align-items:center;
+  font-family:"Manrope",sans-serif;font-size:13.5px}
+.bar-row dt{color:var(--ink-2);font-weight:500}
+.bar-track{height:16px;background:var(--surface-2);border-radius:2px;overflow:hidden}
+.bar-fill{height:100%;background:var(--ice);border-radius:2px}
+.bar-fill.range{background:linear-gradient(90deg,var(--ice) 0%,var(--ice) 100%);
+  opacity:.45}
+.bar-row dd{margin:0;font-variant-numeric:tabular-nums;color:var(--ink);
+  font-weight:600;white-space:nowrap}
+
+.claims{display:grid;gap:10px}
+.claim{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  padding:12px 14px;border:1px solid var(--line);border-radius:3px;
+  background:var(--surface-2);font-family:"Manrope",sans-serif;font-size:14px}
+.claim .flagline{width:4px;height:30px;border-radius:2px;background:var(--sun)}
+.claim b{display:block;color:var(--ink);font-size:14.5px}
+.claim small{color:var(--muted);font-size:12.5px}
+.claim .yr{font-variant-numeric:tabular-nums;color:var(--ink-2);font-size:13px;
+  white-space:nowrap}
+
+.gauge{display:flex;align-items:flex-end;gap:16px;margin:6px 0 0}
+.gauge .big{font-family:"Manrope",sans-serif;font-weight:700;
+  font-size:clamp(38px,6vw,56px);color:var(--ice);line-height:.95;
+  font-variant-numeric:tabular-nums}
+.gauge .unit{font-family:"Manrope",sans-serif;font-size:14px;color:var(--muted);
+  padding-bottom:7px}
+.rank{display:flex;gap:3px;margin-top:18px;flex-wrap:wrap}
+.rank i{width:9px;height:22px;border-radius:1px;background:var(--surface-2);
+  display:block}
+.rank i.low{background:var(--ice);opacity:.55}
+.rank i.now{background:var(--sun)}
