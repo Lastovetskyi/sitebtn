@@ -131,3 +131,16 @@
   display:block}
 .rank i.low{background:var(--ice);opacity:.55}
 .rank i.now{background:var(--sun)}
+
+/* --- свіжі публікації на головній --- */
+.latest{margin:44px 0 8px}
+.latest h2{margin:0 0 16px}
+.latest .grid{list-style:none;padding:0;margin:0}
+.latest .card .when{font-family:"Manrope",system-ui,sans-serif;font-size:12.5px;font-weight:500;
+  color:var(--muted);margin:0 0 6px}
+
+/* --- джерела ключових чисел у hero --- */
+.hero .hero-src{font-family:"Manrope",system-ui,sans-serif;font-size:12.5px;line-height:1.6;
+  color:var(--muted);margin:14px 0 0}
+.hero .hero-src a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.hero .hero-src a:hover{color:var(--ice)}
