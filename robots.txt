@@ -2,4 +2,4 @@ User-agent: *
 Content-Signal: search=yes, ai-train=yes
 Allow: /
 
-Sitemap: http://btn.co.ua/sitemap.xml
+Sitemap: https://btn.co.ua/sitemap.xml
