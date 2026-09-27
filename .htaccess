@@ -1,0 +1,29 @@
+# --- примусовий https ---
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^(.*)$ https://btn.co.ua/$1 [R=301,L]
+
+# --- www -> основний домен ---
+RewriteCond %{HTTP_HOST} ^www\.btn\.co\.ua$ [NC]
+RewriteRule ^(.*)$ https://btn.co.ua/$1 [R=301,L]
+
+# --- наша сторінка помилки замість стандартної ---
+ErrorDocument 404 /404.html
+
+AddDefaultCharset UTF-8
+
+# --- стиснення ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/xml text/plain application/json image/svg+xml
+</IfModule>
+
+# --- кеш статики ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
