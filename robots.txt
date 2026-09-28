@@ -1,5 +1,7 @@
 User-agent: *
 Content-Signal: search=yes, ai-train=yes
 Allow: /
+Disallow: /t.php
+Disallow: /stats.php
 
 Sitemap: https://btn.co.ua/sitemap.xml
